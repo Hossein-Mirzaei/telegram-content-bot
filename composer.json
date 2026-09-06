@@ -1,0 +1,21 @@
+{
+    "name": "hoseiin/telegram-content-bot",
+    "description": "Automated Telegram content bot powered by Hugging Face (DeepSeek) for the channel Hossein Mirzaei | Software Engineer",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.2",
+        "ext-curl": "*",
+        "ext-mbstring": "*",
+        "ext-json": "*",
+        "ext-dom": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

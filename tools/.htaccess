@@ -1,0 +1,4 @@
+# CLI-only scripts - never serve this directory over HTTP.
+Require all denied
+Deny from all
+Options -Indexes

@@ -1,0 +1,4 @@
+# Deny ALL direct web access to this folder - it only contains JSON history/state data.
+Require all denied
+Deny from all
+Options -Indexes

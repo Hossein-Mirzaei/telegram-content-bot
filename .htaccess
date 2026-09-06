@@ -1,0 +1,26 @@
+# Root .htaccess (only relevant if this project root is inside a web-accessible
+# directory - see README.md "Deployment" for the recommended layout where the
+# project root sits OUTSIDE public_html entirely).
+# 
+# FOR DEPLOYMENT INSIDE public_html (simple method):
+# Comment out the restrictive rules below to allow access to public/ folder
+#
+# Require all denied
+# Deny from all
+Options -Indexes
+
+# Allow access to installer at root
+<Files "install.php">
+    Require all granted
+</Files>
+
+# Allow access to public folder
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /telegram-content-bot/
+    
+    # Redirect requests to public folder (except install.php)
+    RewriteCond %{REQUEST_URI} !^/telegram-content-bot/install.php
+    RewriteCond %{REQUEST_URI} !^/telegram-content-bot/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

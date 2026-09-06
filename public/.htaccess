@@ -1,0 +1,22 @@
+# Disable directory listing
+Options -Indexes
+
+# Allow access to install.php specifically
+<Files "install.php">
+    Require all granted
+</Files>
+
+# Deny access to dotfiles (.env, .git, etc.) if they ever end up here by mistake
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Deny access to common sensitive file extensions if ever placed here by mistake
+<FilesMatch "\.(json|log|lock|md|env)$">
+    Require all denied
+</FilesMatch>
+
+# Protect against direct access to composer files if placed here by mistake
+<FilesMatch "^(composer\.json|composer\.lock)$">
+    Require all denied
+</FilesMatch>
