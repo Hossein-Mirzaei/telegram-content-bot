@@ -1,5 +1,9 @@
 # 🤖 Telegram Content Bot
 
+![Bot Screenshot](1.png)
+
+![Channel Preview](2.png)
+
 Automated content generation and publishing bot for Telegram channels, built with
 **PHP 8.2+**, database-free, and suitable for any standard shared hosting.
 
